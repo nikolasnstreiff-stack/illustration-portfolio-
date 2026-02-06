@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABULA RASA: Notes and Musings on Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #d4cfc4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header img {
+            width: 100%;
+            display: block;
+        }
+
+        .content-wrapper {
+            background-color: #d4cfc4;
+            padding-bottom: 80px;
+        }
+
+        .bio-section {
+            display: flex;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 60px auto 0;
+            padding: 0 40px;
+            align-items: flex-start;
+        }
+
+        .portfolio-first {
+            flex: 1;
+            max-width: 60%;
+        }
+
+        .portfolio-first img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .portfolio-first figcaption {
+            margin-top: 12px;
+            font-size: 14px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .bio-column {
+            flex: 0 0 35%;
+            max-width: 35%;
+        }
+
+        .bio-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .bio-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .portfolio-remaining {
+            margin-top: 60px;
+        }
+
+        .portfolio-remaining figure {
+            margin-bottom: 60px;
+        }
+
+        .portfolio-remaining img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .portfolio-remaining figcaption {
+            margin-top: 12px;
+            font-size: 14px;
+            font-style: italic;
+            color: #555;
+            padding-left: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .bio-section {
+                flex-direction: column;
+                padding: 0 20px;
+                margin-top: 40px;
+            }
+
+            .portfolio-first {
+                max-width: 100%;
+                order: 2;
+            }
+
+            .bio-column {
+                max-width: 100%;
+                order: 1;
+                margin-bottom: 40px;
+            }
+
+            .portfolio-remaining {
+                margin-top: 40px;
+            }
+
+            .portfolio-remaining figure {
+                margin-bottom: 40px;
+            }
+
+            .portfolio-remaining figcaption {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="header.jpg" alt="TABULA RASA: Notes and Musings on Form">
+    </header>
+
+    <div class="content-wrapper">
+        <section class="bio-section">
+            <div class="portfolio-first">
+                <figure>
+                    <img src="portfolio1.jpg" alt="Libido Dominandi Triptych No. 1: Mirrored Escalation">
+                    <figcaption>Libido Dominandi Triptych No. 1: Mirrored Escalation, Pen and Ink</figcaption>
+                </figure>
+            </div>
+
+            <div class="bio-column">
+                <img src="bio.jpg" alt="Nikolas Streiff" class="bio-photo">
+                <div class="bio-text">
+                    <p>Working from where signifiers and simulacra transmogrify into different, but not new themes. Semiotics and mediums listed are both collaborative and delegated interpretations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-remaining">
+            <figure>
+                <img src="portfolio2.jpg" alt="Road-Kill Prayer, Crestfallen Fox">
+                <figcaption>'Road-Kill Prayer', Crestfallen Fox, Pen and Ink, 14x17</figcaption>
+            </figure>
+
+            <figure>
+                <img src="portfolio3.jpg" alt="Parody of the Hermit, No Man is an Island">
+                <figcaption>Parody of the Hermit, 'No Man is an Island', 2017, ink, 14x17</figcaption>
+            </figure>
+
+            <figure>
+                <img src="portfolio4.jpg" alt="Portfolio piece 4">
+            </figure>
+
+            <figure>
+                <img src="portfolio5.jpg" alt="Portfolio piece 5">
+            </figure>
+
+            <figure>
+                <img src="portfolio6.jpg" alt="Portfolio piece 6">
+            </figure>
+
+            <figure>
+                <img src="portfolio7.jpg" alt="Portfolio piece 7">
+            </figure>
+        </section>
+    </div>
+</body>
+</html>
