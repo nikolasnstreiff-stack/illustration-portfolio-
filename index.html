@@ -16,7 +16,7 @@
             background-color: #d4cfc4;
             color: #333;
             line-height: 1.6;
-            padding-top: 0; /* Will be set by JS based on header height */
+            padding-top: 0;
         }
 
         /* Fixed header */
@@ -74,7 +74,7 @@
 
         .bio-photo {
             width: 100%;
-            max-width: 300px; /* Limit bio photo size */
+            max-width: 300px;
             height: auto;
             display: block;
             margin-bottom: 12px;
@@ -87,7 +87,7 @@
         }
 
         .portfolio-remaining {
-            margin-top: 30px; /* Tighter spacing between portfolio1 and portfolio2 */
+            margin-top: 30px;
             max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
@@ -95,16 +95,15 @@
         }
 
         .portfolio-remaining figure {
-            margin-bottom: 30px; /* Tighter consistent spacing between all images */
+            margin-bottom: 30px;
         }
 
-        /* Make remaining portfolio images same size as portfolio1 - left aligned */
         .portfolio-remaining img {
-            width: 60%; /* Same as portfolio-first max-width */
+            width: 60%;
             max-width: 60%;
             height: auto;
             display: block;
-            margin-left: 0; /* Flush left */
+            margin-left: 0;
             margin-right: auto;
         }
 
@@ -113,23 +112,24 @@
             font-size: 14px;
             font-style: italic;
             color: #555;
-            max-width: 60%; /* Match image width */
+            max-width: 60%;
         }
 
-        /* Mobile spacing adjustments */
+        /* Mobile adjustments */
         @media (max-width: 768px) {
             .bio-section {
-                margin-top: 30px;
+                margin-top: 20px;
                 padding: 0 20px;
+                gap: 20px;
             }
 
             .portfolio-remaining {
-                margin-top: 30px;
+                margin-top: 20px; /* Even tighter gap on mobile */
                 padding: 0 20px;
             }
 
             .portfolio-remaining figure {
-                margin-bottom: 30px; /* Same as desktop for consistency */
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -186,14 +186,12 @@
     </div>
 
     <script>
-        // Dynamically set body padding based on header height
         window.addEventListener('load', function() {
             const header = document.querySelector('header');
             const headerHeight = header.offsetHeight;
             document.body.style.paddingTop = headerHeight + 'px';
         });
 
-        // Recalculate on window resize
         window.addEventListener('resize', function() {
             const header = document.querySelector('header');
             const headerHeight = header.offsetHeight;
