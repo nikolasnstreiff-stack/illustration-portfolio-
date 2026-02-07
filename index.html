@@ -115,6 +115,23 @@
             color: #555;
             max-width: 60%; /* Match image width */
         }
+
+        /* Mobile spacing adjustments ONLY */
+        @media (max-width: 768px) {
+            .bio-section {
+                margin-top: 30px; /* Reduce top margin */
+                padding: 0 20px; /* Reduce side padding */
+            }
+
+            .portfolio-remaining {
+                margin-top: 30px; /* Reduce gap between portfolio1 and portfolio2 */
+                padding: 0 20px; /* Reduce side padding */
+            }
+
+            .portfolio-remaining figure {
+                margin-bottom: 30px; /* Reduce gap between portfolio images */
+            }
+        }
     </style>
 </head>
 <body>
