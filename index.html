@@ -16,6 +16,18 @@
             background-color: #d4cfc4;
             color: #333;
             line-height: 1.6;
+            padding-top: 0; /* Will be set by JS based on header height */
+        }
+
+        /* Fixed header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #d4cfc4;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         header img {
@@ -62,6 +74,7 @@
 
         .bio-photo {
             width: 100%;
+            max-width: 300px; /* Limit bio photo size */
             height: auto;
             display: block;
             margin-bottom: 12px;
@@ -75,17 +88,24 @@
 
         .portfolio-remaining {
             margin-top: 60px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 40px;
         }
 
         .portfolio-remaining figure {
             margin-bottom: 60px;
         }
 
+        /* Make remaining portfolio images same size as portfolio1 - left aligned */
         .portfolio-remaining img {
-            width: 100%;
-            max-width: 100%;
+            width: 60%; /* Same as portfolio-first max-width */
+            max-width: 60%;
             height: auto;
             display: block;
+            margin-left: 0; /* Flush left */
+            margin-right: auto;
         }
 
         .portfolio-remaining figcaption {
@@ -93,7 +113,7 @@
             font-size: 14px;
             font-style: italic;
             color: #555;
-            padding-left: 40px;
+            max-width: 60%; /* Match image width */
         }
 
         @media (max-width: 768px) {
@@ -101,11 +121,17 @@
                 flex-direction: column;
                 padding: 0 20px;
                 margin-top: 40px;
+                align-items: flex-start; /* Keep left-aligned on mobile */
             }
 
             .portfolio-first {
                 max-width: 100%;
                 order: 2;
+            }
+
+            .portfolio-first img {
+                margin-left: 0; /* Keep left-aligned on mobile */
+                margin-right: auto;
             }
 
             .bio-column {
@@ -114,16 +140,30 @@
                 margin-bottom: 40px;
             }
 
+            .bio-photo {
+                max-width: 250px;
+                margin-left: 0; /* Keep left-aligned on mobile */
+                margin-right: auto;
+            }
+
             .portfolio-remaining {
                 margin-top: 40px;
+                padding: 0 20px;
             }
 
             .portfolio-remaining figure {
                 margin-bottom: 40px;
             }
 
+            .portfolio-remaining img {
+                width: 100%;
+                max-width: 100%;
+                margin-left: 0; /* Keep left-aligned on mobile */
+                margin-right: auto;
+            }
+
             .portfolio-remaining figcaption {
-                padding-left: 20px;
+                max-width: 100%;
             }
         }
     </style>
@@ -178,5 +218,21 @@
             </figure>
         </section>
     </div>
+
+    <script>
+        // Dynamically set body padding based on header height
+        window.addEventListener('load', function() {
+            const header = document.querySelector('header');
+            const headerHeight = header.offsetHeight;
+            document.body.style.paddingTop = headerHeight + 'px';
+        });
+
+        // Recalculate on window resize
+        window.addEventListener('resize', function() {
+            const header = document.querySelector('header');
+            const headerHeight = header.offsetHeight;
+            document.body.style.paddingTop = headerHeight + 'px';
+        });
+    </script>
 </body>
 </html>
